@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- bootstrap watch cdn -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.0/spacelab/bootstrap.min.css" integrity="sha384-sIQOcNYer0kt7oTyFe/YrGzKMFP/qxsJbXTxq0/uiZQgpwXwEu41sVz2M61lWbai" crossorigin="anonymous">
+    <script src="ui.js" defer></script>
+    <script src="weather.js" defer></script>
+    <script src="storage.js" defer></script>
+    <script src="app.js" defer></script>
+    <title>Weather-App</title>
+    <style>
+        body{
+            background: linear-gradient(rgba(28, 149, 185, 0.822),#e4e1b8fb,#aaa670fb);
+            background-repeat: no-repeat;
+            border-radius: 6px;
+            border: none;
+        }
+        .card,.bgprimary{
+            background: linear-gradient(rgba(28, 149, 185, 0.822),#d1ce9efb);
+            background-repeat: no-repeat;
+            border: 0;
+        }
+        .modalBgStyle{
+            background: linear-gradient(#d1ce9efb,rgba(28, 149, 185, 0.822));
+            background-repeat: no-repeat;
+            border-radius: 6px;
+            border: none;
+        }
+        .container-fluid,.container{
+            height: 100vh;
+        }
+        .h-100{
+            border:1px solid rgba(255, 255, 255, 0);
+        }
+        .list-group,.list-group-item{
+            background-color: none;
+        }
+    </style>
+</head>
+<body class="m-0 p-0">
+    <div class="container-fluid">
+        <div class="container">
+            <div class="row h-100">
+                <div class="col-md-6 mx-auto my-auto">
+                    <div class="card bg-primary text-white shadow shadow-sm">
+                        <div class="card-body text-center">
+                            <h1 class="w-location">Location</h1>
+                            <h3 class="w-string">w-string</h3>
+                            <h3 class="w-desc">w-desc</h3>
+                            <img class="w-icon m-0 p-0" height="100px" width="100px" alt="img">
+                            <div class="p-2 w-details">
+                                <p class="w-humidity display-5"></p>
+                                <p class="w-dewpoint display-5"></p>
+                                <p class="w-feels-like display-5"></p>
+                                <p class="w-wind display-5"></p>
+                            </div>
+                            <button class="btn btn-outline-info text-primary mt-2" data-toggle="modal" data-target="#form">Change Location</button>
+                            <!-- modal code -->
+                            <!-- The Modal -->
+                            <div class="modal fade modalBgStyle" id="form">
+                            <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content">
+
+                                <!-- Modal Header -->
+                                <div class="modal-header bgprimary">
+                                    <h4 class="modal-title text-white">Choose Location</h4>
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                </div>
+
+                                <!-- Modal body -->
+                                <div class="modal-body text-left text-dark ">
+                                    <div class="bgprimary p-3 text-white rounded">
+                                        <div class="form-group">
+                                            <label for="location">City</label>
+                                            <input type="text" id="city_name" class="form-control" placeholder="City">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Modal footer -->
+                                <div class="modal-footer bgprimary">
+                                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                    <button class="btn btn-info saveChanges">Save Changes</button>
+                                </div>
+
+                                </div>
+                            </div>
+                            </div>
+                            <!-- modal code end -->
+                        </div>
+                    </div>
+                    <p class="small text-center mt-2 text-white">Developed By <a href="#" class="badge badge-primary">Waseemjaved</a> Copyrights &copy; 2020</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+</body>
+</html>
